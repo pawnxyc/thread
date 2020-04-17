@@ -1,0 +1,7 @@
+1.当一个线程被new出来只是一个实列对象，必须调用start方法，才会被加到group中，start其实也会去调用run方法
+2.java的程序启动时，jvm会有一个main线程去执行代码，并且有若干个守护线程。
+3.当你调用一个Thread的start方法时，当前至少有两个线程，一个是调用你start方法的线程，一个是当前thread变成
+一个线程。
+4.线程的生命周期：new runnable running broke termite
+5.Thread的构造方法Thread(Runnable target, String name),如果没有传第一个参数，则不执行任何代码。
+6.如果在创建线程时，未指定ThreadGroup，则默认与父线程在同一个组中。
