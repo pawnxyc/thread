@@ -8,9 +8,9 @@ public class Worker implements Runnable{
 
     @Override
     public void run() {
-
+        synchronized (this) {
             while (index <= MAX) {
-                synchronized (this) {
+
                     System.out.println(Thread.currentThread() + " 拿到的号码 " + index);
                     index++;
                 }

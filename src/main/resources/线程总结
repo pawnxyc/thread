@@ -5,3 +5,14 @@
 4.线程的生命周期：new runnable running broke termite
 5.Thread的构造方法Thread(Runnable target, String name),如果没有传第一个参数，则不执行任何代码。
 6.如果在创建线程时，未指定ThreadGroup，则默认与父线程在同一个组中。
+7.Thread(group,target,name,stacksize),指定线程的内存大小（1024*1024=1m）。
+8.Thread group可以统一管理一堆线程，停止，等待。
+9.join().->wait for this thread died,then go run others.
+10.使用wait,notify,notifyall时需要先对调用的对象上锁，notify只是让一个线程重新进入竞争锁的queue中，不是马上执行
+11.基于注解型的事务管理是通过spring的aop方式实现的。需要加@transactional注解。默认是一旦抛出Exception.class
+就回滚所有的增删改操作，可以配置参数。底层实现其实是利用了线程的Threadlocal这个变量的每个线程隔离性。
+来实现一个方法中所有的connection是同一个。
+12.ThreadLocal内部的set方法是让ThreadLocal作为对象，让object为值设置到当前线程的ThreadLocalMap中。
+所以是当前线程的私有变量，TL内部有一个entry，它的key是一个弱引用指向的TL，防止内存泄漏。但是不用TL时，
+还是最后remove一下。
+13.volatile有两个特性

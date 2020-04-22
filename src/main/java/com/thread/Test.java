@@ -22,6 +22,5 @@ public class Test {
         tg.enumerate(arrs);
 
         Arrays.asList(arrs).forEach(System.out::println);
-
     }
 }
