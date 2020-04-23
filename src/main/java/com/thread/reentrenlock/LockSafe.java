@@ -17,7 +17,7 @@ public class LockSafe {
         });
         Thread t2 = new Thread(()->{
             while (i<26){
-                lock.lock();
+                lock.lock();//如果竞争不到锁 就不会返回 到一个aqs队列中 一直自旋尝试获取。
                 char s = (char)('A' + i++);
                 System.out.println(s);
                 lock.unlock();

@@ -34,7 +34,7 @@ public class Container1<T> {
             },"custome"+i).start();
         }
 
-        for(int i = 1;i<=2;i++){
+        for(int i = 1;i<=10;i++){
             new Thread(()->{
                 try {
                     container1.put("hello");
