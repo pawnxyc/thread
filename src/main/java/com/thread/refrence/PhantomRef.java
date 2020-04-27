@@ -10,7 +10,7 @@ public class PhantomRef {
     private static ReferenceQueue<User> QUEUE = new ReferenceQueue();
     public static void main(String[] args) {
 
-        PhantomReference<User> p = new PhantomReference<>(new User(),QUEUE);
+        PhantomReference<User> p = new PhantomReference<>(new User("ss"),QUEUE);
 
         new Thread(()->{
             while (true) {
